@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'digital';
+  src: url('DSDIGI_ctlean.ttf');
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  background: linear-gradient(to right, #e9dfc4 0%, #e9dfc4 1%, #ede3c8 2%, #ede3c8 24%, #ebddc3 25%, #e9dfc4 48%, #ebddc3 49%, #e6d8bd 52%, #e6d8bd 53%, #e9dbc0 54%, #e6d8bd 55%, #e6d8bd 56%, #e9dbc0 57%, #e6d8bd 58%, #e6d8bd 73%, #e9dbc0 74%, #e9dbc0 98%, #ebddc3 100%);
+  background-size: 120px;
+  background-repeat: repeat;
+}
+
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  min-height: 100%;
+  position: relative;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.calculator {
+  background: #E7E5E4;
+  border-radius: 8px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), 1px 5px 2px 0 rgba(0, 0, 0, 0.3), inset 0 2px 10px rgba(0, 0, 0, 0.1), inset 1px 1px 1px 2px rgba(255,255,255,.7);
+  display: inline-block;
+  padding: .2rem .5rem .5rem;
+  text-align: left;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 17.457rem;
+  height: 33.875rem;
+  position: absolute;
+}
+
+button {
+  border: 0;
+  border-radius: 5px;
+  background: #ddd;
+  text-align: center;
+  margin: .5rem .35rem;
+  padding: .7rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 1px 4px 2px 1px rgba(0,0,0,0.2), inset 0 0 10px rgba(0, 0, 0, 0.2), inset 1px 1px 1px 2px rgba(255,255,255,.7);
+  position: relative;
+}
+
+button:active, .keydown {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 1), inset 0 0 10px rgba(0, 0, 0, 0.2), inset 1px 1px 1px 2px rgba(255,255,255,.5);
+}
+
+.calculator button {
+  width: 3.2rem;
+}
+
+.display {
+  position: relative;
+  border: 3px inset #fff;
+  margin: 1rem .35rem .5rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.input {
+  font-family: 'digital';
+  background: #c8caaf;
+  border: 2px solid #404226;
+  color: #000;
+  font-family: 'digital';
+  font-size: 2.5rem;
+  padding: 0 .5rem;
+  text-align: right;
+  width: 15.3rem;
+  border-radius: 5px;
+  pointer-events: none;
+}
+.copied {
+    position: absolute;
+    left: 6px;
+    font-family: "Avenir";
+    top: 3px;
+    color: darkgreen;
+    animation-name: copied;
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+}
+@keyframes copied {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.complete {
+  margin: 1rem .5rem 0;
+}
+.complete .input {
+  font-size: 1rem;
+}
+
+div {
+  position: relative;
+}
+
+button:focus {
+  box-shadow: 0 0 10px aqua;
+  outline: none;
+}
+
+.equal {
+  position: absolute;
+  bottom: -4rem;
+  top: 0;
+  margin: .5rem .65rem;
+  background-image: linear-gradient(to top, #f64747, hsl(13,85%,71%) );
+  color: #FEFCF7;
+  z-index: 10;
+}
+
+.equal:active, .equal.keydown {
+  background-image: linear-gradient(to bottom, #f64747, #f9bf98 );
+}
+
+.number, .other {
+  background-image: linear-gradient(to top, hsl(42, 2%, 85%), hsl(42, 2%, 98%));
+  color: hsl(25, 5%, 35%);
+}
+
+.number:active, .number.keydown,
+.other:active, .other.keydown {
+  background-image: linear-gradient(to bottom, hsl(42,2%,90%), hsl(42,2%,100%) );
+}
+
+.operation {
+  background-image: linear-gradient(to top, #2574a9, #00afe5 );
+  color: #FEFCF7;
+}
+
+.operation:active, .operation.keydown {
+  background-image: linear-gradient(to bottom, #006db2, #add8e6 );
+}
+
+.memory {
+  font-size: 1rem;
+  background-image: linear-gradient(to top, hsl(40,8%,25%), hsl(40,8%,50%) );
+  color: #FEFCF7;
+}
+
+.memory:active, .memory.keydown {
+  background-image: linear-gradient(to bottom, hsl(40,0%,10%), hsl(40,0%,40%) );
+}
+
+#help:active, #help.shortcuts {
+  background-image: linear-gradient(to bottom, lightblue, aqua);
+}
+button.zero {
+  width: 7.35rem;
+}
+
+button.big {
+  width: 7.4rem;
+}
+.hide {
+  display: none;
+}
+.history {
+  font-family: 'Source Code Pro', monospace;
+  background: #f1f1f1;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  overflow: auto;
+  text-align: left;
+  z-index: 11;
+}
+.history table {
+  counter-reset: equation; 
+  border-collapse: separate;
+  border-spacing: 0 3px;
+  margin: 0 0 2rem;
+}
+.history td { background: lightblue; }
+.history td:nth-of-type(1),
+.history td:nth-of-type(2) {
+  text-align: right;
+}
+.history td:nth-of-type(1) {
+  background: skyblue;
+}
+.history .count:before {
+  counter-increment: equation;
+  content: '🗑️' counter(equation);
+  display: inline-block;
+  text-align: right;
+  padding: .7rem 5px;
+  margin: .5rem 0;
+  cursor: pointer;
+}
+.history-container {
+  box-shadow: 0 2px 40px #000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 10;
+  width: 90%;
+  height: 80%;
+}
+.history-container:after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255, .7);
+}
+.close-button {
+  background-image: linear-gradient(to top, #2574a9, #00afe5 );
+  color: #fff;
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  z-index: 11;
+}
+.clear-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background-image: linear-gradient(to top, #2574a9, #00afe5 );
+  color: #fff;
+  display: inline-block;
+  font-size: 1rem;
+  width: auto;
+  z-index: 11;
+  padding: .5rem 1rem;
+}
+.shortcuts:before {
+  content: attr(data-shortcut);
+  display: inline-block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  background:
+  #f1f1f1;
+  box-shadow: 0 0 2px
+  aqua, 0 0 10px #777, 1px 4px 2px 0
+  #777;
+  line-height: 1.2;
+  font-size: .8rem;
+  color:
+  #333;
+  border-radius: 5px;
+  padding: 0 3px;
+  white-space: nowrap;
+}
+@media all and (max-width: 600px) {
+  html { font-size: 14px; }
+}
