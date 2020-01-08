@@ -3,6 +3,7 @@
 > A calculator project
 
 Here's a calculator app built with `Vue.js`, with `Jest` unit tests and `Nightwatch` e2e tests.
+
 This is an interactive calculator that can be used with button clicking as well as the keyboard. The ? button shows you the shortcuts for each button. Number buttons map directly with their keyboard values. This is screen reader friendly as well.
 
 ![screenshot.png](screenshot.png)
