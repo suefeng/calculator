@@ -2,6 +2,13 @@
 
 > A calculator project
 
+Here's a calculator app built with Vue.js, with Jest unit tests and Nightwatch e2e tests.
+The article about this app can be found here:
+https://suefeng.com/portfolio/calculator/
+
+The app can be found here:
+https://suefeng.com/demos/play/calculator/dist/#/
+
 ## Build Setup
 
 ``` bash

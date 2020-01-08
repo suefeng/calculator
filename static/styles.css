@@ -12,54 +12,55 @@ html, body {
 }
 
 body {
-  text-align: center;
   background: linear-gradient(to right, #e9dfc4 0%, #e9dfc4 1%, #ede3c8 2%, #ede3c8 24%, #ebddc3 25%, #e9dfc4 48%, #ebddc3 49%, #e6d8bd 52%, #e6d8bd 53%, #e9dbc0 54%, #e6d8bd 55%, #e6d8bd 56%, #e9dbc0 57%, #e6d8bd 58%, #e6d8bd 73%, #e9dbc0 74%, #e9dbc0 98%, #ebddc3 100%);
   background-size: 120px;
   background-repeat: repeat;
+  min-height: 700px;
+  text-align: center;
 }
 
 #app {
+  color: #2c3e50;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   min-height: 100%;
   position: relative;
+  text-align: center;
 }
 
 form {
-  width: 100%;
   height: 100%;
   position: absolute;
+  width: 100%;
 }
 
 .calculator {
   background: #E7E5E4;
   border-radius: 8px;
+  bottom: 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4), 1px 5px 2px 0 rgba(0, 0, 0, 0.3), inset 0 2px 10px rgba(0, 0, 0, 0.1), inset 1px 1px 1px 2px rgba(255,255,255,.7);
   display: inline-block;
+  height: 33.875rem;
+  left: 0;
+  margin: auto;
   padding: .2rem .5rem .5rem;
+  position: absolute;
+  right: 0;
   text-align: left;
   top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
   width: 17.457rem;
-  height: 33.875rem;
-  position: absolute;
 }
 
 button {
+  background: #ddd;
   border: 0;
   border-radius: 5px;
-  background: #ddd;
-  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 1px 4px 2px 1px rgba(0,0,0,0.2), inset 0 0 10px rgba(0, 0, 0, 0.2), inset 1px 1px 1px 2px rgba(255,255,255,.7);
   margin: .5rem .35rem;
   padding: .7rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 1px 4px 2px 1px rgba(0,0,0,0.2), inset 0 0 10px rgba(0, 0, 0, 0.2), inset 1px 1px 1px 2px rgba(255,255,255,.7);
   position: relative;
+  text-align: center;
 }
 
 button:active, .keydown {
@@ -71,36 +72,36 @@ button:active, .keydown {
 }
 
 .display {
-  position: relative;
   border: 3px inset #fff;
-  margin: 1rem .35rem .5rem;
   border-radius: 8px;
   display: inline-block;
+  margin: 1rem .35rem .5rem;
+  position: relative;
 }
 
-.input {
-  font-family: 'digital';
+.input, .input:disabled {
   background: #c8caaf;
   border: 2px solid #404226;
+  border-radius: 5px;
   color: #000;
   font-family: 'digital';
   font-size: 2.5rem;
+  opacity: 1;
   padding: 0 .5rem;
+  pointer-events: none;
   text-align: right;
   width: 15.3rem;
-  border-radius: 5px;
-  pointer-events: none;
 }
 .copied {
-    position: absolute;
-    left: 6px;
-    font-family: "Avenir";
-    top: 3px;
-    color: darkgreen;
-    animation-name: copied;
-    animation-duration: 2s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
+  animation-name: copied;
+  animation-duration: 2s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  color: darkgreen;
+  font-family: "Avenir";
+  left: 6px;
+  position: absolute;
+  top: 3px;
 }
 @keyframes copied {
   from {
@@ -127,12 +128,12 @@ button:focus {
 }
 
 .equal {
-  position: absolute;
+  background-image: linear-gradient(to top, #f64747, hsl(13,85%,71%) );
+  color: #FEFCF7;
   bottom: -4rem;
   top: 0;
   margin: .5rem .65rem;
-  background-image: linear-gradient(to top, #f64747, hsl(13,85%,71%) );
-  color: #FEFCF7;
+  position: absolute;
   z-index: 10;
 }
 
@@ -160,9 +161,9 @@ button:focus {
 }
 
 .memory {
-  font-size: 1rem;
   background-image: linear-gradient(to top, hsl(40,8%,25%), hsl(40,8%,50%) );
   color: #FEFCF7;
+  font-size: 1rem;
 }
 
 .memory:active, .memory.keydown {
@@ -183,16 +184,16 @@ button.big {
   display: none;
 }
 .history {
-  font-family: 'Source Code Pro', monospace;
   background: #f1f1f1;
   box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
   color: #333;
-  position: relative;
-  width: 100%;
+  font-family: 'Source Code Pro', monospace;
   height: 100%;
-  padding: 2rem;
   overflow: auto;
+  padding: 2rem;
+  position: relative;
   text-align: left;
+  width: 100%;
   z-index: 11;
 }
 .history table {
@@ -210,78 +211,74 @@ button.big {
   background: skyblue;
 }
 .history .count:before {
-  counter-increment: equation;
   content: '🗑️' counter(equation);
-  display: inline-block;
-  text-align: right;
-  padding: .7rem 5px;
-  margin: .5rem 0;
+  counter-increment: equation;
   cursor: pointer;
+  display: inline-block;
+  margin: .5rem 0;
+  padding: .7rem 5px;
+  text-align: right;
 }
 .history-container {
+  bottom: 0;
   box-shadow: 0 2px 40px #000;
-  position: fixed;
+  height: 80%;
   left: 0;
+  margin: auto;
+  position: fixed;
   right: 0;
   top: 0;
-  bottom: 0;
-  margin: auto;
-  z-index: 10;
   width: 90%;
-  height: 80%;
+  z-index: 10;
 }
 .history-container:after {
-  content: '';
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: rgba(255,255,255, .7);
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 .close-button {
   background-image: linear-gradient(to top, #2574a9, #00afe5 );
   color: #fff;
   display: inline-block;
   font-size: 2rem;
+  height: 2rem;
   line-height: 0;
+  padding: 0;
   position: absolute;
   right: 10px;
   top: 10px;
   width: 2rem;
-  height: 2rem;
-  padding: 0;
   z-index: 11;
 }
 .clear-button {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
   background-image: linear-gradient(to top, #2574a9, #00afe5 );
+  bottom: 10px;
   color: #fff;
   display: inline-block;
   font-size: 1rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  right: 10px;
   width: auto;
   z-index: 11;
-  padding: .5rem 1rem;
 }
 .shortcuts:before {
+  background: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0 0 2px aqua, 0 0 10px #777, 1px 4px 2px 0 #777;
+  color: #333;
   content: attr(data-shortcut);
   display: inline-block;
+  font-size: .8rem;
+  left: -5px;
+  line-height: 1.2;
+  padding: 0 3px;
   position: absolute;
   top: -5px;
-  left: -5px;
-  background:
-  #f1f1f1;
-  box-shadow: 0 0 2px
-  aqua, 0 0 10px #777, 1px 4px 2px 0
-  #777;
-  line-height: 1.2;
-  font-size: .8rem;
-  color:
-  #333;
-  border-radius: 5px;
-  padding: 0 3px;
   white-space: nowrap;
 }
 @media all and (max-width: 600px) {
