@@ -14,7 +14,7 @@ https://suefeng.com/portfolio/calculator/
 
 The app can be found here:
 
-https://suefeng.com/demos/play/calculator/dist/#/
+letsdesign.space/play/calculator/dist/#/
 
 ## Build Setup
 
